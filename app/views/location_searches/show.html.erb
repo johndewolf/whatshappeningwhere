@@ -1,0 +1,9 @@
+<% @instagrams = Instagram.media_search(@location_search.longitude, @location_search.latitude) %>
+<% @instagrams.each do |instagram| %>
+  <% unless instagram.caption == nil %>
+    <%= instagram.caption.text %>
+    <br>
+    <%= image_tag instagram.images.low_resolution.url %>
+    <br>
+  <% end %>
+<% end %>
