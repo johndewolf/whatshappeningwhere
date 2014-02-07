@@ -1,3 +1,5 @@
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location_search.latitude}%2C#{@location_search.longitude}" %>
+<br>
 <% @instagrams = Instagram.media_search(@location_search.latitude, @location_search.longitude) %>
 <% @instagrams.each do |instagram| %>
   <% unless instagram.caption == nil %>
