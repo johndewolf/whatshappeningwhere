@@ -9,7 +9,7 @@ class LocationSearchesController < ApplicationController
 
     if @location_search.save
       redirect_to @location_search,
-        notice: "Goal successfully created"
+        notice: "Location successfully created"
     else
       render :new
     end
@@ -22,7 +22,7 @@ class LocationSearchesController < ApplicationController
   private
 
   def location_search_params
-    params.require(:location_search).permit(:longitude, :latitude)
+    params.require(:location_search).permit(:address)
   end
 
 end

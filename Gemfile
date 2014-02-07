@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'pg'
 gem 'instagram'
 gem 'simple_form'
+gem 'geocoder'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

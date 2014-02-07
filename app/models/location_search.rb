@@ -1,4 +1,4 @@
 class LocationSearch < ActiveRecord::Base
-  validates_presence_of :longitude
-  validates_presence_of :latitude
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
 end
