@@ -5,7 +5,7 @@ class LocationSearchesController < ApplicationController
   end
 
   def create
-    @location_search = LocationSearch.new(location_search_params)
+    @location_search = current_user.location_searches.create(location_search_params)
 
     if @location_search.save
       redirect_to @location_search,

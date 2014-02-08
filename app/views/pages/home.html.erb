@@ -1,3 +1,7 @@
-<% Instagram.media_popular.each do |picture| %>
-  <%= image_tag picture.images.standard_resolution.url %>
-<% end %>
+<h1>Welcome</h1>
+<ul>
+<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+<li><%= link_to 'Sign In', new_user_session_path %></li>
+<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+</ul>
+<%= link_to 'New Location Search', new_location_search_path, method: 'get' %>
