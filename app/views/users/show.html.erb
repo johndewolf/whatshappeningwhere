@@ -1,0 +1,8 @@
+<h1>Your Favorite Locations:</h1>
+<% @user.location_searches.each do |location| %>
+  <%= link_to "#{location.address}", location_search_path(location) %>
+  <%= location.description %>
+  <br>
+<% end %>
+<br>
+<%= link_to 'New Location Search', new_location_search_path, method: 'get' %>

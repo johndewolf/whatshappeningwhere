@@ -5,3 +5,4 @@
 <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
 </ul>
 <%= link_to 'New Location Search', new_location_search_path, method: 'get' %>
+<%= link_to 'My Favorite Locations', current_user %>

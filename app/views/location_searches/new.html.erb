@@ -1,4 +1,12 @@
 <%= simple_form_for @location_search do |f| %>
+  <% if @location_search.errors.any? %>
+  <ul class="errors">
+      <% @location_search.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <%= f.input :address %>
+  <%= f.input :description %>
   <%= f.button :submit %>
 <% end %>
