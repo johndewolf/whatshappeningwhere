@@ -5,15 +5,22 @@
 </div>
 
 <br>
-<% @instagrams = Instagram.media_search(@location_search.latitude, @location_search.longitude) %>
+
+<% @instagrams = Instagram.media_search(@location_search.latitude,
+                  @location_search.longitude) %>
+
 <% @instagrams.each do |instagram| %>
-  <% unless instagram.caption == nil %>
-    <%= instagram.caption.text %>
-    <br>
+  <ul>
+    <li><%= instagram.user.username %></li>
+    <li><%= Time.at(instagram.created_time.to_i) %></li>
+    <% unless instagram.caption == nil %>
+      <li><%= instagram.caption.text %></li>
+    <% end %>
     <%= image_tag instagram.images.low_resolution.url %>
-    <br>
-  <% end %>
+  </ul>
 <% end %>
+
+
 
 <script type="text/javascript">
 handler = Gmaps.build('Google');

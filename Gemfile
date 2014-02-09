@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'devise'
+gem 'twitter'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
