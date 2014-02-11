@@ -21,6 +21,8 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'devise'
 gem 'twitter'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
