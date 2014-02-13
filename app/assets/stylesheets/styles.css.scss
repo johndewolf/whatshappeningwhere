@@ -1,9 +1,19 @@
 .instagrams {
-  border: 5px solid black;
+  margin: 0px;
+}
+
+.grams-container {
+  background: #aec9cc;
+  border-radius: 3px;
 }
 .instagrams li {
   list-style-type: none;
   position: relative;
   margin: 10px;
   padding: 10px;
+}
+
+.instagrams:hover{
+  border: 2px black solid;
+  background-color: white;
 }

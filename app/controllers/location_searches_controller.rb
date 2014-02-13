@@ -17,6 +17,8 @@ class LocationSearchesController < ApplicationController
 
   def show
     @location_search = LocationSearch.find(params[:id])
+    @instagrams = Instagram.media_search(@location_search.latitude,
+                    @location_search.longitude)
   end
 
   private

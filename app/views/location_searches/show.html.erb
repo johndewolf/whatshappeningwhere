@@ -9,19 +9,19 @@
     </div>
   </div>
   <br>
-  <% @instagrams = Instagram.media_search(@location_search.latitude,
-                    @location_search.longitude) %>
+  <div class="grams-container">
     <% @instagrams.each do |instagram| %>
-    <div class="row-fluid">
-      <div class="span3">
-        <ul class="instagrams">
-          <li><%= image_tag instagram.images.low_resolution.url %></li>
-          <li><a href=<%= "http://www.instagram.com/" +
-            instagram.user.username %>><%=instagram.user.username %></a></li>
-          <li><%= Time.at(instagram.created_time.to_i).strftime("%b %d, %l:%M") %></li>
-        </ul>
-      </div>
-    <% end %>
+      <div class="row-fluid">
+        <div class="span3">
+          <ul class="instagrams">
+            <li><%= image_tag instagram.images.low_resolution.url %></li>
+            <li><a href=<%= "http://www.instagram.com/" +
+              instagram.user.username %>><%=instagram.user.username %></a></li>
+            <li><%= Time.at(instagram.created_time.to_i).strftime("%b %d, %l:%M") %></li>
+          </ul>
+        </div>
+      <% end %>
+  </div>
 </div>
 <script type="text/javascript">
 handler = Gmaps.build('Google');
