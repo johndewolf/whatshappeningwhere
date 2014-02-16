@@ -19,12 +19,14 @@
             </a>
             <div class="modal fade" id=<%= "myModal#{instagram.link[-6..-2]}" %> tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-content">
-                <li><a href=<%= "http://www.instagram.com/" +
-                  instagram.user.username %>><%=instagram.user.username %></a></li>
-                <li><%= Time.at(instagram.created_time.to_i).strftime("%b %d, %l:%M") %></li>
-                <% unless instagram.caption == nil %>
-                  </li><%= instagram.caption.text %></li>
-                <% end %>
+                <div class="modal-title">
+                  <li><a href=<%= "http://www.instagram.com/" +
+                    instagram.user.username %>><%=instagram.user.username %></a></li>
+                  <li><%= Time.at(instagram.created_time.to_i).strftime("%b %d, %l:%M") %></li>
+                  <% unless instagram.caption == nil %>
+                    <li><%= instagram.caption.text %></li>
+                  <% end %>
+                </div>
               </div>
             </div>
           </ul>
@@ -32,7 +34,6 @@
       <% end %>
   </div>
 </div>
-
 
 <script type="text/javascript">
 handler = Gmaps.build('Google');
