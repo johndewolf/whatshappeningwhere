@@ -15,6 +15,24 @@ class LocationSearchesController < ApplicationController
     end
   end
 
+  def edit
+    @location_search = current_user.location_searches.find(params[:id])
+  end
+
+  def update
+    @location_search = current_user.location_searches.find(params[:id])
+      if @location_search.update(location_search_params)
+        redirect_to @location_search, notice: 'Location was successfully updated.'
+      else
+        render action: 'edit'
+      end
+  end
+
+  def destroy
+    LocationSearch.find(params[:id]).destroy
+      redirect_to user_path(current_user), notice: 'Location was deleted'
+  end
+
   def show
     @location_search = LocationSearch.find(params[:id])
     @instagrams = Instagram.media_search(@location_search.latitude,
@@ -24,7 +42,7 @@ class LocationSearchesController < ApplicationController
   private
 
   def location_search_params
-    params.require(:location_search).permit(:address)
+    params.require(:location_search).permit(:address, :description)
   end
 
 end
