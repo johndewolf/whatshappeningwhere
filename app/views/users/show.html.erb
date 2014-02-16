@@ -10,9 +10,10 @@
     <tr>
       <td><%= link_to "#{location.address}", location_search_path(location) %></td>
       <td><%= location.description %></td>
+      <% if current_user == @user %>
       <td><%= link_to 'Delete', location, method: :delete %> |
            <%= link_to 'Edit', edit_location_search_path(location) %> </td>
-
+      <% end %>
     </tr>
   <% end %>
 </table>

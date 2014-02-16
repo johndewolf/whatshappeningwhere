@@ -29,7 +29,7 @@ class LocationSearchesController < ApplicationController
   end
 
   def destroy
-    LocationSearch.find(params[:id]).destroy
+    current_user.location_searches.find(params[:id]).destroy
       redirect_to user_path(current_user), notice: 'Location was deleted'
   end
 
@@ -37,6 +37,7 @@ class LocationSearchesController < ApplicationController
     @location_search = LocationSearch.find(params[:id])
     @instagrams = Instagram.media_search(@location_search.latitude,
                     @location_search.longitude)
+    @user = current_user
   end
 
   private
