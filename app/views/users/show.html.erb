@@ -1,21 +1,23 @@
-<h1>Your Favorite Locations:</h1>
-<table>
-  <tr>
-    <thead>
-      <th>Location</th>
-      <th>Description</th>
-    </thead>
-  </tr>
-  <% @user.location_searches.each do |location| %>
-    <tr>
-      <td><%= link_to "#{location.address}", location_search_path(location) %></td>
-      <td><%= location.description %></td>
-      <% if current_user == @user %>
-      <td><%= link_to 'Delete', location, method: :delete %> |
-           <%= link_to 'Edit', edit_location_search_path(location) %> </td>
+<div class="container">
+    <h1>Your Favorite Locations:</h1>
+    <table>
+      <tr>
+        <thead>
+          <th>Location</th>
+          <th>Description</th>
+        </thead>
+      </tr>
+      <% @user.location_searches.each do |location| %>
+        <tr>
+          <td><%= link_to "#{location.address}", location_search_path(location) %></td>
+          <td><%= location.description %></td>
+          <% if current_user == @user %>
+          <td><%= link_to 'Delete', location, method: :delete %> |
+               <%= link_to 'Edit', edit_location_search_path(location) %> </td>
+          <% end %>
+        </tr>
       <% end %>
-    </tr>
-  <% end %>
-</table>
-<br>
-<%= link_to 'New Location Search', new_location_search_path, method: 'get' %>
+    </table>
+    <br>
+    <%= link_to 'New Location Search', new_location_search_path, method: 'get' %>
+</div>
