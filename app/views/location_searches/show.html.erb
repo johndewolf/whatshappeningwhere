@@ -23,12 +23,15 @@
         </a>
         <div class="modal fade" id=<%= "myModal#{instagram.link[-6..-2]}" %> tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-content">
+            <div class="hidden">
               <li><a href=<%= "http://www.instagram.com/" +
                 instagram.user.username %>><%=instagram.user.username %></a></li>
               <li><%= Time.at(instagram.created_time.to_i).strftime("%b %d, %l:%M") %></li>
               <% unless instagram.caption == nil %>
                 <li><%= instagram.caption.text %></li>
               <% end %>
+              <li><%= image_tag instagram.images.standard_resolution.url %></li>
+          </div>
           </div>
         </div>
       </ul>

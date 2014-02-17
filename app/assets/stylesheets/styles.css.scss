@@ -3,13 +3,6 @@
   margin: 0px;
 }
 
-.home-page {
-  background: url(map.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 .grams-container {
   background: #aec9cc;
   border-radius: 3px;
@@ -19,6 +12,10 @@
   position: relative;
   margin: 10px;
   padding: 10px;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 #header {
