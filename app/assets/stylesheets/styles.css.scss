@@ -45,6 +45,9 @@
 .brand {
   font-family: 'Poller One', cursive;
 }
+.visible-xs .brand {
+  font-size: 6px;
+}
 
 h1 {
   font-family: 'Poller One', cursive;
@@ -73,4 +76,10 @@ td {
 .google-map img {
   width: 100%;
   opacity:0.4;
+}
+
+@media screen and (max-width: 640px) {
+  .navbar .brand {
+    font-size: 12px;
+  }
 }
