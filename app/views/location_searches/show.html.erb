@@ -15,16 +15,17 @@
   </div>
     <ul>
       <% @instagrams.each do |instagram| %>
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="instagrams">
-            <a href="#" data-toggle="modal"
-              <%= "data-target=#myModal#{instagram.link[-6..-2]}"%>>
-              <li><%= image_tag instagram.images.low_resolution.url %></li>
-            </a>
+        <div class="row-fluid">
+          <div class="span3">
+            <div class="instagrams">
+              <a href="#" data-toggle="modal"
+                <%= "data-target=#myModal#{instagram.link[-6..-2]}"%>>
+                <li><%= image_tag instagram.images.low_resolution.url %></li>
+              </a>
+            </div>
           </div>
-        </div>
       <% end %>
+    </div>
     </ul>
 </div>
 
@@ -34,8 +35,8 @@
     <div class="modal-content">
       <ul>
         <li id="standard-res-pic"><a href=<%= "http://www.instagram.com/" +
-                  instagram.user.username %>><%=instagram.user.username %></a></li>
-        <li><%= Time.at(instagram.created_time.to_i).strftime("%b %d, %l:%M") %></li>
+                  instagram.user.username %>><%=instagram.user.username %></a></li><br>
+        <li><%= Time.at(instagram.created_time.to_i).strftime("%b %d, %l:%M") %></li><br>
         <% unless instagram.caption == nil %>
           <li><%= instagram.caption.text %></li>
         <% end %>

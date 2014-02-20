@@ -17,7 +17,7 @@
 
 .modal-content {
   margin: 10px;
-  padding: 10px;
+  padding: 10px 40px 10px 10px;
 }
 
 .hidden {
@@ -28,6 +28,11 @@
   margin: 10px;
 }
 
+.form-actions {
+  background-color: transparent;
+  border-top: 1px solid #e5e5e5;
+  width: 15%
+}
 .instagrams:hover{
   border: 2px black solid;
   background-color: white;
@@ -61,9 +66,6 @@ td {
     width: 100% !important;
 }
 
-.modal-content li {
-  display:inline-block;
-}
 .google-map img {
   width: 100%;
   opacity:0.4;
