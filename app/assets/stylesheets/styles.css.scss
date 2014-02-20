@@ -9,7 +9,13 @@
 }
 .instagrams li {
   list-style-type: none;
+  display: inline-block;
   position: relative;
+  margin: 10px;
+  padding: 10px;
+}
+
+.modal-content {
   margin: 10px;
   padding: 10px;
 }

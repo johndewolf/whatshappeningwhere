@@ -13,28 +13,34 @@
      </div>
     </div>
   </div>
-
-<% @instagrams.each do |instagram| %>
-  <div class="row-fluid">
-    <div class="span3">
-      <ul class="instagrams">
-        <a href="#" data-toggle="modal" data-target=<%= "#myModal" + instagram.link[-6..-2] %>>
-        <li><%= image_tag instagram.images.low_resolution.url %></li>
-        </a>
-        <div class="modal fade" id=<%= "myModal#{instagram.link[-6..-2]}" %> tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-content">
-            <div class="hidden">
-              <li><a href=<%= "http://www.instagram.com/" +
-                instagram.user.username %>><%=instagram.user.username %></a></li>
-              <li><%= Time.at(instagram.created_time.to_i).strftime("%b %d, %l:%M") %></li>
-              <% unless instagram.caption == nil %>
-                <li><%= instagram.caption.text %></li>
-              <% end %>
-              <li><%= image_tag instagram.images.standard_resolution.url %></li>
-          </div>
+    <ul>
+      <% @instagrams.each do |instagram| %>
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="instagrams">
+            <a href="#" data-toggle="modal"
+              <%= "data-target=#myModal#{instagram.link[-6..-2]}"%>>
+              <li><%= image_tag instagram.images.low_resolution.url %></li>
+            </a>
           </div>
         </div>
+      <% end %>
+    </ul>
+</div>
+
+<% @instagrams.each do |instagram| %>
+  <div class="modal fade hide" <%="id=myModal#{instagram.link[-6..-2]}"%>
+      tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-content">
+      <ul>
+        <li id="standard-res-pic"><a href=<%= "http://www.instagram.com/" +
+                  instagram.user.username %>><%=instagram.user.username %></a></li>
+        <li><%= Time.at(instagram.created_time.to_i).strftime("%b %d, %l:%M") %></li>
+        <% unless instagram.caption == nil %>
+          <li><%= instagram.caption.text %></li>
+        <% end %>
+        <li><%= image_tag instagram.images.standard_resolution.url %></li>
       </ul>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
