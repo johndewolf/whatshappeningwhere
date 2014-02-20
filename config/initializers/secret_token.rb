@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Whatshappeningwhere::Application.config.secret_key_base = '0c0a70f6a5416e4f8c566074abe673192d15c8407f49eb78332706d31bc8510b7389de2067830113f3acedc0182678c2ddcee31cb8e91a8ea7d1f9c92eb192a9'
+Whatshappeningwhere::Application.config.secret_key_base = ENV['SECRET_KEY']
