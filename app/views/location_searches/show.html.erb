@@ -14,12 +14,12 @@
     </div>
   </div>
     <ul>
-      <% @instagrams.each do |instagram| %>
+      <% @instagrams.each_with_index do |instagram, i| %>
         <div class="row-fluid">
           <div class="span3">
             <div class="instagrams">
               <a href="#" data-toggle="modal"
-                <%= "data-target=#myModal#{instagram.link[-6..-2]}"%>>
+                <%= "data-target=#myModal#{i}"%>>
                 <li><%= image_tag instagram.images.low_resolution.url %></li>
               </a>
             </div>
@@ -29,8 +29,8 @@
     </ul>
 </div>
 
-<% @instagrams.each do |instagram| %>
-  <div class="modal fade hide" <%="id=myModal#{instagram.link[-6..-2]}"%>
+<% @instagrams.each_with_index do |instagram, i| %>
+  <div class="modal fade hide" <%="id=myModal#{i}"%>
       tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-content">
       <ul>
@@ -42,7 +42,6 @@
         <% end %>
         <li><%= image_tag instagram.images.standard_resolution.url %></li>
       </ul>
-
     </div>
   </div>
 <% end %>

@@ -1,11 +1,15 @@
-<div class="container">
-<h1>Welcome</h1>
-  <% if user_signed_in? %>
-    <ul>
-      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-    </ul>
-  <% else %>
-    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-    <li><%= link_to 'Sign In', new_user_session_path %></li>
-  <% end %>
+<div class="row-fluid">
+<div id="homepage-bg">
+  <div class="container">
+    <h1>Welcome</h1>
+      <% if user_signed_in? %>
+        <ul>
+          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+        </ul>
+      <% else %>
+        <p>Hi there and welcome to WhatsHappeningWhere. Search for Instagram pictures by address to see what's going on in the world. Maybe you're out of town and want to make sure little Tommy isn't having a party at your house. Maybe you want to checkout the shenanigans from your favorite conert venue or sporting arena. Or maybe you just want to creep on your ex's apartment. Check it out and have fun.</p>
+        <%= link_to 'Sign Up', new_user_registration_path %></li> | <%= link_to 'Sign In', new_user_session_path %>
+      <% end %>
+    </div>
+</div>
 </div>
